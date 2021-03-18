@@ -36,7 +36,7 @@ require_once('conndb.php');
         <li class="nav-item text-center">
           <a class="nav-link" href="contact.php"><i class="fas fa-handshake"></i>Contacts</a>
         </li>
-        <span id="look" class=mt-4 >
+        <span id="look" class=mt-3 >
         <i class="fas fa-hand-point-left fa-2x text-white"></i>
         </span>
       </ul>

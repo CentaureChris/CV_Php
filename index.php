@@ -27,7 +27,8 @@ if(isset($_POST['navSubmit']) && !empty($_POST['navSearch'])){
   
   $sql1 = "SELECT * FROM livre l
         INNER JOIN category c
-        ON l.id_category = c.id_c ";
+        ON l.id_category = c.id_c 
+        WHERE display = 1";
   }
   
   $result = mysqli_query($conn,$sql1);

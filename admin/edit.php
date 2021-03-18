@@ -31,6 +31,8 @@ if(isset($_POST['submit'])){
  $image = $_FILES['image']['name'];
  $description = trim(htmlspecialchars(addslashes($_POST['description']))); 
  $category = trim(htmlspecialchars(addslashes($_POST['id_category'])));
+ $display = $_POST['display'];
+ 
  
  $destination = "../assets/images/";
 
@@ -38,13 +40,13 @@ if(isset($_POST['submit'])){
 
 
     if(empty($image)){
-        $sql1 = "UPDATE livre SET auteur = '$auteur', titre = '$titre', id_category = '$category', description = '$description', created = CURRENT_TIMESTAMP 
+        $sql1 = "UPDATE livre SET auteur = '$auteur', titre = '$titre', id_category = '$category', description = '$description', created = CURRENT_TIMESTAMP, display = '$display'
         WHERE id_livre = '$id_livre' ";
     }else{
         if(file_exists('../assets/images/'.$data['image'])){
             unlink('../assets/images/'.$data['image']);
         }
-        $sql1 = "UPDATE livre SET auteur = '$auteur', titre = '$titre', id_category = '$category', description = '$description', image = '$image' ,created = CURRENT_TIMESTAMP 
+        $sql1 = "UPDATE livre SET auteur = '$auteur', titre = '$titre', id_category = '$category', description = '$description', image = '$image' ,created = CURRENT_TIMESTAMP, display = '$display'
         WHERE id_livre = '$id_livre'";
     }
 
@@ -68,7 +70,8 @@ if(isset($_POST['submit'])){
 ?>
 <style>
     h1{
-        margin-top:7%
+        margin-top:7%;
+        
     }
 </style>
 <div class="offset-2 col-8">
@@ -97,11 +100,22 @@ if(isset($_POST['submit'])){
             <option value="<?=$rows['id_c']; ?>"><?=ucfirst($rows['nom']) ?></option>
         <?php } ?>
             </select>
+            <select name="display" class="form-select mb-3">
+            <?php if($data['display']==1){?>
+         
+             <option value="<?=$data['display'];?>">Afficher</option>
+             <option value="0">Masquer</option>
+            
+            <?php }elseif($data['display'] == 0){?>
+        
+             <option value="<?=$data['display'];?>">Masquer</option>
+             <option value="1">Afficher</option>
+             <?php } ?>
+         </select>
+            
         </div>
     </div>
-
-    </div>
-    
+   
     <div class="row">
         <label for="image" class="col-2">Image: </label>
         <input type="file" class="col-6 form-control mb-3 " id="image" name="image"> 

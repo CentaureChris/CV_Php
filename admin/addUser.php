@@ -42,13 +42,17 @@ if(isset($_POST['submit'])){
 <?php
     require_once('../partials/header.inc');
 ?>
-
+<style>
+    .card{
+        margin-top: 10% !important;
+    }
+</style>
 <div class="container">
-    <div class="card col-4 offset-4 mt-3">
+    <div class="card col-4 offset-4 mt-3 top">
         <div class="card-header text-center">Inscription</div>
         <?=$error; ?>
         <div class="card-body">
-            <form action="<?php $_SERVER['PHP_SELF']; ?>"  method="post"?>
+            <form action="<?php $_SERVER['PHP_SELF']; ?>"  method="post" ?>
                 <div class="mb-3">
                         <label for="nom" class="form-label">Nom</label>
                         <input type="text" class="form-control" id="prenom" name="nom" placeholder="Entrer le nom du nouvel utilisateur" >

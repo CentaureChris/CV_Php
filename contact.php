@@ -12,23 +12,23 @@ require_once('partials/headerUser.inc');
                         <form onSubmit={this.handleSubmit}><legend><u>Formulaire de contact</u></legend>
                             <div class="mb-3">
                                 <label htmlFor="nom" class="form-label">Nom:</label>
-                                <input type="text" name="nom" id="nom" class="form-control"required placeholder="Enter your name" onChange={this.handleChange} value={nom}/>
+                                <input type="text" name="nom" id="nom" class="form-control"required placeholder="Enter your name" />
                             </div>
                             <div class="mb-3">
                                 <label htmlFor="prenom" class="form-label">Prénom:</label>
-                                <input type="text" name="prenom" id="prenom" class="form-control"required placeholder="Enter your name" onChange={this.handleChange} value={prenom}/>
+                                <input type="text" name="prenom" id="prenom" class="form-control"required placeholder="Enter your name" />
                             </div>
                             <div class="mb-3">
                                 <label htmlFor="birthday" class="form-label">Date de Naissance</label>
-                                <input type="date" name="birthday" id="birthday" class="form-control"required placeholder="Enter your birthday" onChange={this.handleChange} value={birthday}/>
+                                <input type="date" name="birthday" id="birthday" class="form-control"required placeholder="Enter your birthday" />
                             </div>
                             <div class="mb-3">
                                 <label htmlFor="telephone" class="form-label">Téléphone</label>
-                                <input type="tel" name="tel" id="tel" class="form-control"required placeholder="Enter number" onChange={this.handleChange} value={tel}/>
+                                <input type="tel" name="tel" id="tel" class="form-control"required placeholder="Enter number" />
                             </div>
                             <div class="mb-3">
                                 <label htmlFor="email" class="form-label">Adresse email:</label>
-                                <input type="mail" name="email" id="email" class="form-control"required placeholder="Enter your email" onChange={this.handleChange} value={email}/>
+                                <input type="mail" name="email" id="email" class="form-control"required placeholder="Enter your email" />
                             </div>
                             <button type="submit" class="btn btn-outline-primary offset-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Soumettre</button>
                         </form>
@@ -36,13 +36,13 @@ require_once('partials/headerUser.inc');
                     <article id="art2" class="col  text-center border border-2 border-light rounded-start p-3">
                         <div class="joinme"></div>
                         <legend><u>Où me joindre:</u></legend><p style="height: 100px;"></p>
-                        <FaPaperPlane size={30} style="fill: green";/>
+                        <i class="fas fa-paper-plane fa-3x" style="color: blue;"></i>
                         <p><a href="mailto:c.centaure@gmail.com">c.centaure@gmail.com</a></p>
-                        <AiFillGithub size={30} style="fill: purple"/>
+                        <i class="fab fa-github fa-3x" style="color: purple;"></i>
                         <p><a href="https://github.com/CentaureChris" target="blank">Github</a></p>
-                        <SiGooglemaps size={30} style="fill: darkblue"/>
+                        <i class="fas fa-map-marked-alt fa-3x" style="color: green;"></i>
                         <p> 1 allée du gange  92160 Antony</p>
-                        <FcPhoneAndroid size={30}/>
+                        <i class="fas fa-mobile-alt fa-3x" style="color: Mediumslateblue;"></i>
                         <p>Tel: 06 50 75 86 74</p>
                     </article>
                 </div>

@@ -23,6 +23,9 @@ require_once('../conndb.php');
     h1{
         margin-top:6%
     }
+    .container{
+        margin-bottom: 5%;
+    }
 </style>
 <div class="container">
         <h1 class="bg-light text-center">Administration</h1>
@@ -50,9 +53,12 @@ require_once('../conndb.php');
                     <td ><?=  $rows['description'] ?></td>
                     <td><?=  $rows['nom'] ?></td>
                     <?php if(isset($_SESSION['auth']) && $_SESSION['auth']['role'] == 1){ ?>
-                   <td><a href="edit.php?id=<?= $rows['id_livre']; ?>" class="btn btn-outline-secondary">Editer<i class="fas fa-edit ml-2"></i></a></td>
-                    <td><a href="delete.php?id=<?= $rows['id_livre']; ?>" class="btn btn-outline-danger" onclick="return confirm('Confirmer la suppression?')">Supprimer<i class="fas fa-trash ml-2"></i></a></td>
-                </tr>
+                        <td>
+                        </div>    
+                        <a href="edit.php?id=<?= $rows['id_livre']; ?>" class="btn btn-outline-secondary">Editer<i class="fas fa-edit ml-2"></i></a></td>
+                        <td><a href="delete.php?id=<?= $rows['id_livre']; ?>" class="btn btn-outline-danger" onclick="return confirm('Confirmer la suppression?')">Supprimer<i class="fas fa-trash ml-2"></i></a> 
+                </tr></td>
+                       
             <?php } }?>
             </tbody>
          
