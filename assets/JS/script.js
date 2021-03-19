@@ -16,7 +16,7 @@ $(document).ready(function () {
   function animation2() {
     $("#setAnim").css("position", "relative").animate(
       {
-        left: "200%",
+        left: "250%",
       },
       5000
     );

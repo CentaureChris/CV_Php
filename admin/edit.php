@@ -70,16 +70,20 @@ if(isset($_POST['submit'])){
 ?>
 <style>
     h1{
-        margin-top:7%;
-        
+        margin-top:8%;
+        margin-bottom: 10%;
+    }
+    .form{
+        margin-bottom: 10%;
     }
 </style>
 <div class="offset-2 col-8">
 <h1 class="bg-light text-center">Administration</h1>
-<h2 class="text-white">Formulaire de modification</h2>
+
 <?= $error ?>
 
-    <form action="<?=$_SERVER['PHP_SELF'];?>" method="POST" enctype="multipart/form-data" class="bg-white p-3">
+    <form action="<?=$_SERVER['PHP_SELF'];?>" method="POST" enctype="multipart/form-data" class="bg-white p-4 form">
+    <h2 >Formulaire de modification</h2>
     <div class="row">
         <input type="hidden" name="id_livre" value="<?=$data['id_livre']; ?>" />
         <img  class="col-6" src='../assets/images/<?=$data["image"];?>' width="100px" alt="<?=$data['image'];?>" />

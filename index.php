@@ -54,6 +54,9 @@ if(isset($_POST['navSubmit']) && !empty($_POST['navSearch'])){
     h1,h5{
         font-family: Copperplate, Papyrus, fantasy;
     }
+    .card:hover{
+        box-shadow: 10px 0px 5px white,0 -3px 5px white;
+    }
 </style>
 
 
