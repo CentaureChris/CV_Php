@@ -76,6 +76,8 @@ $resultat = mysqli_query($conn,$sql);
         <ul class="dropdown-menu bg-light " aria-labelledby="navbarDropdown">
         <?php if(isset($_SESSION['auth']) && $_SESSION['auth']['role'] == 1){ ?>
           <li><a class="dropdown-item text-primary" href="addUser.php">Add User<i class="fas fa-user-plus ml-2"></i></li>
+          <li><a class="dropdown-item text-primary" href="userList.php">User List<i class="fas fa-user ml-2"></i></li>
+
         <?php } ?>
         
           <li class="text-end"><a class="dropdown-item text-warning" href="logout.php">Déconexion<i class="fas fa-user-alt-slash ml-2"></i></a></li>
