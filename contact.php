@@ -3,13 +3,29 @@ session_start();
 require_once('partials/headerUser.inc');
 
 
-// if(isset($_POST['submit'])){
+if(isset($_POST['submit'])){
 
-//     $message = $_POST['message'];
-//     $headers = "From ".$_POST['nom']." ".$_POST['prenom']." Email: ".$_POST['email'];
-//     header('sendMail.php');
+    $message = $_POST['message'];
+    $headers = "From ".$_POST['nom']." ".$_POST['prenom']." Email: ".$_POST['email'];
+    // header('presentation.php');
+   
 
-// }
+
+    $to = "adouken972@hotmail.fr";
+    $subject = "test";
+    // $message = "Test de messagerie sur php.";
+    // $headers = "From: c.centaure972@gmail.com"."\r\n".
+    // "CC: c.centaure972@gmail.com";
+    header("Refresh:1");
+    
+    if(mail($to,$subject,$message,$headers)){
+        echo "<script>alert('Email send success!')</script>";
+    }else{
+        echo "echec";
+    }
+    
+
+}
 
 ?>
 
@@ -63,7 +79,7 @@ require_once('partials/headerUser.inc');
                 <div id="map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44108.47638589965!2d2.261439010680891!3d48.75097557686981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e677114605c77f%3A0x40b82c3688b3ed0!2sAntony!5e0!3m2!1sfr!2sfr!4v1613516160414!5m2!1sfr!2sfr" width="100%" height="450" frameborder="0"  allowfullscreen="" aria-hidden="false" tabIndex="0" title="location"></iframe></div>
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <!-- <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
@@ -77,4 +93,4 @@ require_once('partials/headerUser.inc');
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
