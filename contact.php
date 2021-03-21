@@ -1,6 +1,16 @@
 <?php
 session_start();
 require_once('partials/headerUser.inc');
+
+
+// if(isset($_POST['submit'])){
+
+//     $message = $_POST['message'];
+//     $headers = "From ".$_POST['nom']." ".$_POST['prenom']." Email: ".$_POST['email'];
+//     header('sendMail.php');
+
+// }
+
 ?>
 
 <div>
@@ -9,7 +19,7 @@ require_once('partials/headerUser.inc');
             <div class="row row-cols-1 row-cols-md-2 g-4 m-5">
                     <article id="art1" class="col border border-2 rounded-end p-3 border-light ">
                         
-                        <form onSubmit={this.handleSubmit}><legend><u>Formulaire de contact</u></legend>
+                        <form action="<?php $_SERVER['PHP_SELF']; ?>"  method="post" ><legend><u>Formulaire de contact</u></legend>
                             <div class="mb-3">
                                 <label htmlFor="nom" class="form-label">Nom:</label>
                                 <input type="text" name="nom" id="nom" class="form-control"required placeholder="Enter your name" />
@@ -19,8 +29,11 @@ require_once('partials/headerUser.inc');
                                 <input type="text" name="prenom" id="prenom" class="form-control"required placeholder="Enter your name" />
                             </div>
                             <div class="mb-3">
-                                <label htmlFor="birthday" class="form-label">Date de Naissance</label>
-                                <input type="date" name="birthday" id="birthday" class="form-control"required placeholder="Enter your birthday" />
+                                
+                                <div class="form-group">
+                                  <label for="message">Message</label>
+                                  <textarea class="form-control" name="message" id="message" rows="3" placeholder="Enter votre message"></textarea>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label htmlFor="telephone" class="form-label">Téléphone</label>
@@ -30,7 +43,7 @@ require_once('partials/headerUser.inc');
                                 <label htmlFor="email" class="form-label">Adresse email:</label>
                                 <input type="mail" name="email" id="email" class="form-control"required placeholder="Enter your email" />
                             </div>
-                            <button type="submit" class="btn btn-outline-primary offset-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Soumettre</button>
+                            <button type="submit" name="submit"class="btn btn-outline-primary offset-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Soumettre</button>
                         </form>
                     </article>
                     <article id="art2" class="col  text-center border border-2 border-light rounded-start p-3">
@@ -53,10 +66,10 @@ require_once('partials/headerUser.inc');
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
                     </div>
                     <div class="modal-body">
-                        Merci monsieur pour votre visite!
+                        Message envoyé! Merci<?= " ".$_POST['prenom']." "; ?>pour votre visite!
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

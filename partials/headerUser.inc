@@ -1,5 +1,11 @@
 <?php 
 require_once('conndb.php');
+$host = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+if($host == 'localhost/Ecf5_Centaure/admin/sendMail.php') 
+{
+    require_once('../conndb.php');
+    echo"ok";
+}
 
 
 ?>

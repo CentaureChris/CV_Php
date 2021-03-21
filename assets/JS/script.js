@@ -29,4 +29,7 @@ $(document).ready(function () {
   };
   setInterval(animation, 1000);
   setInterval(animation2, 1000);
+
+ 
+  
 });

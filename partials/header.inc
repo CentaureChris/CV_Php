@@ -62,7 +62,7 @@ $resultat = mysqli_query($conn,$sql);
           <i class="fas fa-wrench fa-2x "></i>
         </span>
       </ul>
-      <form class="d-flex offset-7" action="<?=$_SERVER['PHP_SELF'];?>" method="post">
+      <form class="d-flex offset-6" action="<?=$_SERVER['PHP_SELF'];?>" method="post" id="navSearch">
           <input class="form-control me-2" type="search"  id="navSearch" name="navSearch" placeholder="Search" aria-label="Search" >
           <button class="btn btn-outline-success flex-end" type="submit" id="navSubmit" name="navSubmit"><i class="fas fa-search"></i></button>
       </form>
